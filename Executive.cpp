@@ -35,9 +35,14 @@ void Executive::run()
   std::cout<<"2)Exit\n";
   std::cin>>choice;
   while(choice==1){
+  playerOne->displayBoard();
+  cout<<"playerOne place your ship\n";
   playerOne->getNumberOfShips();
   playerOne->displayBoard();
-
+  cout << string(50,'\n');
+      
+  playerTwo->displayBoard();
+  cout<<"playerTwo place your ship\n";
   playerTwo->getNumberOfShips();
   playerTwo->displayBoard();
 

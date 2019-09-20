@@ -110,7 +110,7 @@ Boards::~Boards()
       myBoard[i][j] = ' ';
     }
   }
-  delete myBoard;
+  free (myBoard);
 }
 
 //Displays the board
@@ -139,10 +139,10 @@ bool Boards::isHit(char column, int row)
     //myBoard[row][columnNumber] = 'H';
     return true;
   }
-  else if(myBoard[row][columnNumber] == 'H' || myBoard[row][columnNumber] == 'M' )
-  {
-    cout << "You've already guessed there, you forfeit your turn!\n";
-  }
+  //else if(myBoard[row][columnNumber] == 'H' || myBoard[row][columnNumber] == 'M' )
+ // {
+   // cout << "You've already guessed there, you forfeit your turn!\n";
+  //}
   else
   {
     //myBoard[row][columnNumber] = 'M';
