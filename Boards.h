@@ -81,7 +81,7 @@ public:
 	 */
 	bool isGameOver();
 
-
+    void startover();
 	/**
 	 * @pre Boards are filled.
 	 * @post Shot is registered as hit or miss.

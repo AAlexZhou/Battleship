@@ -15,6 +15,15 @@ Boards::Boards(){
   }
 }
 //Converts the letter for column into a number
+void Boards::startover()
+{
+    for(int i = 0 ; i < rows ; i++) {
+        for(int j = 0; j < cols; j++){
+            myBoard[i][j] = '~';
+        }
+    }
+}
+
 int Boards::charConvert(char temp)
 {
   int columnNumber = 0;

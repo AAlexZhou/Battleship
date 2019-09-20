@@ -15,7 +15,8 @@ Executive::Executive()
 Executive::~Executive()
 {
 
-
+    delete [] playerOne;
+    delete [] playerTwo;
 }
 
 
@@ -101,6 +102,12 @@ cout << string(50,'\n');
   std::cout<<"1)Hell YEAH\n";
   std::cout<<"2)NO\n";
   std::cin>>choice;
+      playerOne->startover();
+      playerTwo->startover();
+      //free(playerOne);
+      //free(playerTwo) ;
+      //playerOne = new Boards();
+      //playerTwo = new Boards();
 }
 
 }
