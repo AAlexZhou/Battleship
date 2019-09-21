@@ -7,16 +7,14 @@ Executive::Executive()
 {
   row = numberOfShips = 0;
   column = ' ';
-  playerOne = new Boards();
-  playerTwo = new Boards();
+
 }
 
 
 Executive::~Executive()
 {
-
-    delete [] playerOne;
-    delete [] playerTwo;
+    delete playerOne;
+    delete playerTwo;
 }
 
 
@@ -37,11 +35,11 @@ void Executive::run()
   std::cin>>choice;
   while(choice==1){
   playerOne->displayBoard();
-  cout<<"playerOne place your ship\n";
+  cout << "playerOne place your ship\n";
   playerOne->getNumberOfShips();
   playerOne->displayBoard();
   cout << string(50,'\n');
-      
+
   playerTwo->displayBoard();
   cout<<"playerTwo place your ship\n";
   playerTwo->getNumberOfShips();
@@ -69,12 +67,13 @@ cout << string(50,'\n');
     {
       playerOne->FireMiss(b,a);
     }
-    if(playerTwo->isGameOver()){
+    if(playerTwo->isGameOver())
+    {
       break;
     }
 
 
-  
+
     cout << "Following is playerTwo's Board:\n";
     playerTwo->displayBoard();
     cout << "Player2 starts hitting Player1." << endl;
@@ -98,7 +97,7 @@ cout << string(50,'\n');
 
   }
   cout << "Game Ends !" << endl;
-  cout<<" Would You Like to Start over? \n";
+  cout << " Would You Like to Start over? \n";
   std::cout<<"1)Hell YEAH\n";
   std::cout<<"2)NO\n";
   std::cin>>choice;
@@ -131,7 +130,10 @@ void Executive::getColumn(){
    }
   }
 }
-void Executive::getRow(){
+
+
+void Executive::getRow()
+{
   std::cout << "\nEnter the row number: ";
   std::cin >> row;
   while (std::cin.fail() || row > 7 || row < 0){

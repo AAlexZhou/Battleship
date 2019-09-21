@@ -2,18 +2,33 @@
 #include <iostream>
 using namespace std;
 
-Boards::Boards(){
+Boards::Boards()
+{
   /*Default values put into rows and columns.*/
   rows = 8;
   cols = 8;
   /*Creating the board, implemented as a 2-D array of
     characters on the heap.*/
-  for(int i = 0 ; i < rows ; i++) {
-    for(int j = 0; j < cols; j++){
+  for(int i = 0 ; i < rows ; i++)
+  {
+    for(int j = 0; j < cols; j++)
+    {
       myBoard[i][j] = '~';
     }
   }
 }
+
+Boards::~Boards()
+{
+  //Deletes the allocated memory for the board.
+/*  for(int i = 0 ; i < rows ; i++)
+  {
+      delete [] myBoard;
+  }
+*/
+}
+
+
 //Converts the letter for column into a number
 void Boards::startover()
 {
@@ -109,18 +124,6 @@ bool Boards::isValid(char column, int row)
   return false;
 }
 
-Boards::~Boards()
-{
-  //Deletes the allocated memory for the board.
-  for(int i = 0 ; i < rows ; i++)
-  {
-    for(int j = 0 ; j < rows ; j++)
-    {
-      myBoard[i][j] = ' ';
-    }
-  }
-  free (myBoard);
-}
 
 //Displays the board
 void Boards::displayBoard() const

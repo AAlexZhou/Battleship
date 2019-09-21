@@ -8,8 +8,8 @@ class Executive
 
         int row;
         char column;
-        Boards* playerOne;
-        Boards* playerTwo;
+        Boards* playerOne = new Boards();
+        Boards* playerTwo = new Boards();
 		    int numberOfShips;
 
     public:
